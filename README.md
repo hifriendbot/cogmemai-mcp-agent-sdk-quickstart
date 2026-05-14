@@ -108,6 +108,42 @@ The CogmemAi MCP server ships six discoverable skills (visible on the [Skills Ma
 
 Source for all six is in the [main cogmemai-mcp repo](https://github.com/hifriendbot/cogmemai-mcp/tree/main/skill).
 
+## You're using 4 of 35 tools
+
+This quickstart calls about four of the tools the CogmemAi MCP server exposes (`extract_memories`, `save_memory`, `get_project_context`, and a recall path). The full server ships with **35 tools** and they all install with the same `npm install -g cogmemai-mcp` command. You don't need a different install or a paid plan to use them; they're all available on the free tier, capped only by usage limits.
+
+A non-exhaustive tour of what's in the box once the basic demo clicks for you:
+
+| Category | Tools | What they unlock |
+|---|---|---|
+| Recall | `recall_memories`, `get_project_context`, `list_memories`, `list_tags` | Semantic + recency + importance ranked retrieval, scoped per project or global |
+| Lifecycle | `update_memory`, `delete_memory`, `bulk_update`, `bulk_delete`, `get_memory_versions` | Versioned edits, mass cleanup, history-aware updates |
+| Knowledge graph | `link_memories`, `get_memory_links`, `consolidate_memories`, `promote_memory` | Connect related facts, merge duplicates, lift project-scope memory to global |
+| Tasks + reminders | `save_task`, `update_task`, `get_tasks`, `set_reminder` | Cross-session task tracking and scheduled nudges |
+| Skills + rules | `save_rule`, `list_rules`, `delete_rule`, `generate_skills`, `extract_principles` | Codify standing user rules; auto-generate skills from accumulated memory |
+| Analytics + health | `get_analytics`, `get_usage`, `get_stale_memories`, `feedback_memory`, `preflight` | Memory health scores, usage trends, surface stale content for review |
+| Bulk I/O | `import_memories`, `export_memories`, `ingest_document` | Backup, migrate, or seed from PDFs/markdown/transcripts |
+| Session + context | `save_session_summary`, `save_correction`, `get_file_changes` | Wrap-up summaries, wrong→right pattern capture, file-level activity |
+
+The two skills that drive the most team value are paired: `save-bugfix` (capture symptom + root cause + fix after every resolved bug) and `search-before-debugging` (recall existing fixes before debugging from scratch). Same bug, debugged once. See the [`skill/`](https://github.com/hifriendbot/cogmemai-mcp/tree/main/skill) directory in the main repo.
+
+## Free vs Pro
+
+Free tier is enough for a single developer doing personal work. Pro tier is what teams move to when memory becomes operational.
+
+| | Free | Pro |
+|---|---|---|
+| Memories | 500 / month | Higher limits |
+| Extractions | 500 / month | Higher limits |
+| Projects | 5 | Unlimited |
+| Card required | No | Yes |
+| Team-shared memory across members | — | ✓ |
+| Analytics + health-score dashboards | basic | full |
+| Cross-platform recall (MCP, REST, Chrome extension all sharing one memory pool) | ✓ | ✓ |
+| On-prem dedicated deployment | — | ✓ (defense / regulated) |
+
+[See current pricing](https://hifriendbot.com/pricing/) · [Get a free API key](https://hifriendbot.com/developer/) · [Talk to us about teams or on-prem](https://hifriendbot.com/contact/)
+
 ## Receipts
 
 | | |
