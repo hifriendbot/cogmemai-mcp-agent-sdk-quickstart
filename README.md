@@ -108,6 +108,24 @@ The CogmemAi MCP server ships six discoverable skills (visible on the [Skills Ma
 
 Source for all six is in the [main cogmemai-mcp repo](https://github.com/hifriendbot/cogmemai-mcp/tree/main/skill).
 
+## Want to see the full workflow?
+
+The two scripts in [`src/`](./src) prove CogmemAi persists across processes. The three scripts in [`examples/full-workflow/`](./examples/full-workflow) show **what to actually do with that persistence**:
+
+| Script | Scenario | Tools |
+|---|---|---|
+| [`debug-loop.ts`](./examples/full-workflow/debug-loop.ts) | Bug appears, agent searches memory for an existing fix, fails to find one, debugs, then saves the fix so it's findable next time. The "we fixed this before" loop. | `recall_memories`, `save_memory`, `link_memories`, `save_task`, `get_project_context` |
+| [`planning-session.ts`](./examples/full-workflow/planning-session.ts) | Long planning discussion distilled into a linked memory graph: decisions, constraints, tasks, reminder for next session. | `extract_memories`, `link_memories`, `consolidate_memories`, `save_task`, `set_reminder`, `save_session_summary` |
+| [`analytics-review.ts`](./examples/full-workflow/analytics-review.ts) | Weekly memory hygiene: review health, find stale memories, bulk-update obsolete ones, feedback the recall ranker. | `get_analytics`, `get_stale_memories`, `bulk_update`, `feedback_memory`, `list_tags` |
+
+```bash
+npx tsx examples/full-workflow/debug-loop.ts
+npx tsx examples/full-workflow/planning-session.ts
+npx tsx examples/full-workflow/analytics-review.ts
+```
+
+They share a project ID so memories accumulate across runs. After all three, you have a real working memory graph you can browse, query, and build on. Roughly 5-10 minutes end-to-end. See the [examples README](./examples/full-workflow/README.md) for details.
+
 ## You're using 4 of 35 tools
 
 This quickstart calls about four of the tools the CogmemAi MCP server exposes (`extract_memories`, `save_memory`, `get_project_context`, and a recall path). The full server ships with **35 tools** and they all install with the same `npm install -g cogmemai-mcp` command. You don't need a different install or a paid plan to use them; they're all available on the free tier, capped only by usage limits.
