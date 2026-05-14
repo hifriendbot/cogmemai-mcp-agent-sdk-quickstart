@@ -1,0 +1,41 @@
+{
+  "name": "cogmemai-mcp-agent-sdk-quickstart",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smallest possible working example of CogmemAi (95.1% LongMemEval) wired into the Claude Agent SDK. Two-session demo: save in session 1, recall in session 2.",
+  "type": "module",
+  "scripts": {
+    "session-1": "tsx src/session-1-save.ts",
+    "session-2": "tsx src/session-2-recall.ts",
+    "demo": "npm run session-1 && echo '\\n--- new process ---\\n' && npm run session-2"
+  },
+  "keywords": [
+    "claude",
+    "anthropic",
+    "agent-sdk",
+    "claude-code",
+    "mcp",
+    "memory",
+    "cogmemai",
+    "longmemeval",
+    "persistent-memory",
+    "ai-agent"
+  ],
+  "author": "HiFriendbot",
+  "license": "MIT",
+  "homepage": "https://hifriendbot.com/claude-code/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hifriendbot/cogmemai-mcp-agent-sdk-quickstart"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.1.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
