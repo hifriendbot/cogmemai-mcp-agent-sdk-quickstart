@@ -1,5 +1,7 @@
 # CogmemAi + Claude Agent SDK Quickstart
 
+![CogmemAi for the Claude Agent SDK: persistent memory across two fresh processes. Save in session 1, recall in session 2.](./assets/hero-banner.png)
+
 Persistent memory for the Claude Agent SDK in 60 seconds.
 
 This repo is the smallest possible working example of CogmemAi (the Smart Persistent Memory layer that scored **95.1% on LongMemEval**, the top published score in the field) wired into a Claude Agent SDK script. Run two scripts back-to-back and watch the agent remember across processes.
