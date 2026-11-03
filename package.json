@@ -2,7 +2,7 @@
   "name": "cogmemai-mcp-agent-sdk-quickstart",
   "version": "1.0.0",
   "private": true,
-  "description": "Smallest possible working example of CogmemAi (95.1% LongMemEval) wired into the Claude Agent SDK. Two-session demo: save in session 1, recall in session 2.",
+  "description": "Smallest possible working example of CogmemAi (top published score on LongMemEval) wired into the Claude Agent SDK. Two-session demo: save in session 1, recall in session 2.",
   "type": "module",
   "scripts": {
     "session-1": "tsx src/session-1-save.ts",

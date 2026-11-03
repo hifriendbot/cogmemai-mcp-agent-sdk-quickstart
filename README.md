@@ -4,7 +4,7 @@
 
 Persistent memory for the Claude Agent SDK in 60 seconds.
 
-This repo is the smallest possible working example of CogmemAi (the Smart Persistent Memory layer that scored **95.1% on LongMemEval**, the top published score in the field) wired into a Claude Agent SDK script. Run two scripts back-to-back and watch the agent remember across processes.
+This repo is the smallest possible working example of CogmemAi (the Smart Persistent Memory layer with the top published score on LongMemEval) wired into a Claude Agent SDK script. Run two scripts back-to-back and watch the agent remember across processes.
 
 > **Why this repo exists.** Starting June 15, 2026, Anthropic gives Max 20x subscribers a $200/mo credit specifically for Claude Agent SDK and `claude -p` usage. Memory is the deepest unsolved pain in those workflows. This repo is the shortest path from "I have $200 to spend" to "my agent now remembers everything."
 
